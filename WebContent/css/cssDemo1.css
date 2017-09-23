@@ -1,0 +1,13 @@
+@charset "UTF-8";
+.pp{
+	color:red;
+	font-size:30px;
+	font-family: 宋体,隶书,华文行楷；
+	
+}
+.p1{
+	color:red;
+	font-size:30px;
+	font-family: 宋体,隶书,华文行楷；
+	font-style:oblique;
+}

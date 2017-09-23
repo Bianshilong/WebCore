@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.p1{
+	font-size80;
+	color:red;
+	text-decoration: none;
+}
+.p2{
+	text-align:right;
+}
+.bottom span{
+	vertical-align: middle;
+}
+#name{
+	position:absolute;
+	left:50px;
+	top:100px;
+	width:200px;
+	height:100px;
+   visiblity:visible;
+   z-index:1;
+   background: green;
+}
