@@ -21,5 +21,23 @@ function Bot1() {
 	Pasta.prototype.freshcook=0.5;
 	var chowfun=new Pasta("rice", "3", "flat", false);
 	alert(chowfun);
+}
+function Arrayexpdo(){
+	var myArray=new Array(3);
+	myArray[0]="Hi";
+	myArray[1]=35;
+	myArray[2]=new Date(2017,8,15);
+	alert(myArray.length);
+	myArray.expando="Jscript";
+	myArray["another expando"]="Windows";
+	myArray[3]="Hello";
+	alert(myArray.length);
 	
+}
+function createNewDoc()
+{
+	var newDoc=document.open("text/html","replace");
+	var txt="<html><body>Learning about the DOM is FUN!</body></html>";
+	newDoc.write(txt);
+	newDoc.close();
 }
