@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../../js/jqurey/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	function get_text() {
+		alert($('#txt').val());
+	}
+	function copyDiv() {
+		$('#to').html($('#from').html());
+	}
+	function setDiv() {
+		$("div").css('border', '1px solid green')
+		$('div').css('width', '200px')
+		$('div').css('height', '100px')
+	}
+	function classSelt() {
+		$('.fruit').css('color', 'red');
+	}
+
+	function sortSelt() {
+		$('.fruit,#tomato').css('color', 'red');
+	}
+	function allSelt() {
+		console.log($('*')[0]);
+	}
+	function descSelt() {
+		$('div label').css('color','red');
+	}
+	
+	function bodySelt() {
+		console.log($('body *'));
+	}
+	
+	function sonSelt() {
+		$('p > label').css('color','blue');
+	}
+	function prveSelt() {
+		$('p + label').css('color','yellow');
+	}
+	function nerbSelt() {
+		$('p ~ label').css('color','green');
+	}
+	function firstlast() {
+		$('li:first').css('color','blue');
+		$('li:last').css('color','yellow');
+	}
+	function firstlastchild() {
+		$('li:first-child').css('color','blue');
+		$('li:last-child').css('color','yellow');
+	}
+	
+	function eqSelt() {
+		$('li:eq(6)').css('color','pink');
+	}
+	
+	function conSelt() {
+		$('li:contains(a)').css('color','purple');
+	}
+	
+	function hasSelt() {
+		$('li:has(span)').css('color','purple');
+	}
+	
+	function hiddenSelt() {
+		$('p:hidden').show();
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="txt" />
+	<input type="button" onclick="get_text()" value="Go" />
+	<div id="from">这是一个div</div>
+	<div id="to">我想复制上一个div</div>
+	<input type="button" onclick="copyDiv()" value="Copy" />
+	<input type="button" onclick="setDiv()" value="setDiv" />
+	<ul>
+		<li class="fruit">Apple</li>
+		<li id="tomato">Potato</li>
+		<li class="fruit">Orange</li>
+		<li>Pear</li>
+		<li class="fruit">Banana</li>
+	</ul>
+	<input type="button" onclick="classSelt()" value="classSelt" />
+	<input type="button" onclick="sortSelt()" value="sortSelt" />
+	<input type="button" onclick="allSelt()" value="allSelt" />
+	<div>祖先元素
+		<p>
+			<label>孙元素</label> <span><label>后代元素</label></span>
+		</p>
+		<label>子元素1</label>
+		<label>子元素2</label>
+		<label>子元素3</label>
+		<label>子元素4</label>
+	</div>
+	<input type="button" onclick="descSelt()" value="后代选择器" />
+	<input type="button" onclick="bodySelt()" value="body*选择器" />
+	<input type="button" onclick="sonSelt()" value="父子选择器" />
+	<input type="button" onclick="prveSelt()" value="隔壁选择器" />
+	<input type="button" onclick="nerbSelt()" value="邻居选择器" />
+	<ul>
+		<li class="fruit">Apple</li>
+		<li id="tomato">Potato</li>
+		<li class="fruit">Orange</li>
+		<li>Pear</li>
+		<li class="fruit">Banana</li>
+		<li>Apple2<p><span>Span</span></p></li>
+	</ul>
+	<input type="button" onclick="firstlast()" value="firstlast选择器" />
+	<input type="button" onclick="firstlastchild()" value="firstlastchild选择器" />
+	<input type="button" onclick="firstlastchild()" value="firstlastchild选择器" />
+	<input type="button" onclick="eqSelt()" value="eqSelt选择器" />
+	<input type="button" onclick="conSelt()" value="contains选择器" />
+	<input type="button" onclick="hasSelt()" value="has选择器" />
+	<p style="display:none;">这是一个隐藏的数据</p>
+	<input type="button" onclick="hiddenSelt()" value="显示隐藏选择器" />
+
+
+</body>
+</html>
