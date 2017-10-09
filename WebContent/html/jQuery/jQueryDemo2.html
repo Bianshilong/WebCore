@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../../js/jqurey/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	
+	function get_val() {
+		$('input[id=ipt]').val('hello');
+	}
+	
+	function ipcheck() {
+		var s=$('#my_form:input:text')[1];
+		s.val('message');
+	}
+	
+	function ck() {
+		console.log($('#my_form1:input:checked'));
+	}
+	
+	function selt() {
+		console.log($('#sel:selected'));
+	}
+	
+	
+	
+
+</script>
+</head>
+<body>
+	<form id="my_form" action="">
+		<input id="ipt" type="text" class="cls_ipt" />
+		<input  type="button"  />
+		<input id="i" type="text" class="cls_ipt" />
+		<input id="it" type="password" class="cls_ipt" />
+		<input id="pt" type="text" class="cls_ipt" />
+	</form>
+	<input type="button" onclick="get_val()" value="测试属性选择器" />
+	<input type="button" onclick="ipcheck()" value="input选择器" />
+	<hr/>
+	<form id="my_form1">
+		<input type="text"/>
+		<input type="radio"/>
+		<input type="radio" checked="checked"/>
+		<input type="checkbox"/>
+		<input type="checkbox" checked="checked"/>
+	</form>
+	<input type="button" onclick="ck()" value="unchecked选择器"/>
+	<hr/>
+	<select id="sel" multiple="multiple">
+    	<option value="0">苹果</option>
+    	<option value="1" selected="selected">桔子</option>
+    	<option value="2">荔枝</option>
+    	<option value="3" selected="selected">葡萄</option>
+    	<option value="4">香蕉</option>
+	</select>
+	<input type="button" onclick="selt()" value="Selected选择器"/>
+	
+</body>
+</html>

@@ -67,6 +67,10 @@
 	function hiddenSelt() {
 		$('p:hidden').show();
 	}
+	
+	function hideSelt() {
+		$('p:visible').hide();
+	}
 </script>
 </head>
 <body>
@@ -115,7 +119,9 @@
 	<input type="button" onclick="conSelt()" value="contains选择器" />
 	<input type="button" onclick="hasSelt()" value="has选择器" />
 	<p style="display:none;">这是一个隐藏的数据</p>
+	<p style="visible">我将会被隐藏！</p>
 	<input type="button" onclick="hiddenSelt()" value="显示隐藏选择器" />
+	<input type="button" onclick="hideSelt()" value="隐藏选择器" />
 
 
 </body>
