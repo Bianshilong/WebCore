@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel=stylesheet href="../../css/CssDemo.css" type="text/css"/>
 <script type="text/javascript" src="../../js/jqurey/jquery-3.2.1.js"></script>
 <script type="text/javascript">
 	
 	function get_val() {
 		$('input[id=ipt]').val('hello');
 	}
-	
+
+	//预想达到选择所有的文本框，然后给文本框赋值，但未达成目标，暂未改进
 	function ipcheck() {
-		var s=$('#my_form:input:text')[1];
-		s.val('message');
+		console.log($('#my_form :text'));
 	}
 	
 	function ck() {
@@ -20,12 +21,84 @@
 	}
 	
 	function selt() {
-		console.log($('#sel:selected'));
+		console.log($('#sel :selected'));
+	}
+
+	function cots() {
+		console.log($('#my_form2').attr('action'));
+		$('#my_form2').attr('action', 'bar.html');
+		console.log($('#my_form2').attr('action'));
+	}
+
+	function rem() {
+		$('a').removeAttr('href');
+	}
+
+	function test1() {
+		console.log($('p').html());
+		$('p').text('<i>World</i>');
+		console.log($('p').text());
+		/* alert($('p').html());
+		alert($('p').html('<i>World</>'));
+		alert($('p').html()); */
+	}
+
+	function addc() {
+		$('p').addClass('cls_3');
 	}
 	
+	function remc() {
+		$('p').removeClass('cls_2');
+	}
 	
+	function appd() {
+		$('p').append(" World!");
+	}
 	
+	function preappd() {
+		$('p').prepend(" World!");
+	}
+	
+	function afappd() {
+		$('p').after('<p>World!</p>');
+	}
+	
+	function awrap() {
+		$('#pp00').wrap("<div></div>");
+	}
 
+	function shd() {
+			$('#div001').hide('slow',function(){
+				$('#btn001').attr('value',"显示div");
+			})
+		//判断div的dispaly值
+		/* var dis = $('#div001')[0].style.display;
+		if (dis=="none") {
+			$('#div001').show('slow',function(){
+				$('#btn001').attr('value',"隐藏div");
+			})
+		} */
+		//判断button的value值
+		if ($('#btn001').attr('value')=="显示div") {
+			$('#div001').show('slow',function(){
+				$('#btn001').attr('value',"隐藏div");
+			})
+		} 
+	}
+
+	function sht(){
+		/* if($('btn002').attr('value')=="隐藏div"){
+			$('#div001').toggle(2000,function(){
+				//$('＃btn002').attr('value',"显示div");
+				})
+			}else {
+				$('#div001').toggle(3000,function(){
+					//$('＃btn002').attr('value',"隐藏div");
+					})	
+			}
+ */
+ 		$('#div001').toggle(2000,function(){});
+	}
 </script>
 </head>
 <body>
@@ -50,12 +123,65 @@
 	<hr/>
 	<select id="sel" multiple="multiple">
     	<option value="0">苹果</option>
-    	<option value="1" selected="selected">桔子</option>
+    	<option value="1" selected="selected" style="color: red">桔子</option>
     	<option value="2">荔枝</option>
     	<option value="3" selected="selected">葡萄</option>
     	<option value="4">香蕉</option>
 	</select>
 	<input type="button" onclick="selt()" value="Selected选择器"/>
+	<hr/>
+	<form id="my_form2" action="foo.php"></form>
+	<input type="button" onclick="cots()" value="con选择器"/>	
+	<a href="http://www.baidu.com">这是一个超链接</a>
+	<input type="button" onclick="rem()" value="removeattr()"/>
+	<p id="pp00"><b>Hello</b></p>
+	<input type="button" onclick="test1()" value="ceshi html,text"/>
+	<input type="button" onclick="appd()" value="Append()"/>
+	<input type="button" onclick="preappd()" value="Prepend()"/>
+	<input type="button" onclick="afappd()" value="after()"/>
+	<input type="button" onclick="awrap()" value="Wrap()"/>
+	
+	<hr />
+	<p class="cls_1 cls_2 ">其实我是一个span</p>
+	<input type="button" onclick="addc()" value="addClass"/>
+	<input type="button" onclick="remc()" value="removeClass"/>
+	<p id="pp01"><input type="text" /><input type="button" value="GO" /></p>
+	<script type="text/javascript">
+	$(function(){
+		$('#btn').bind('click',function(){
+			$(this).attr("disabled","true");
+		})
+		$('#txt001').hover(fs,bl);
+	});
+
+	function fs() {
+		$('#txt001').css('color','red');
+	}
+	
+	function bl() {
+		$('#txt001').css('color','black');
+	}
+	
+	/* $(function(){
+		$('#txt001').bind('focus',function(){
+			$(this).css('color','red');
+		})
+	});
+	 */
+	/* $(function(){
+		$('#txt001').bind('blur',function(){
+			$(this).css('color','black');
+		})
+	}); */
+	
+	</script>
+	<input id="btn" type="button" value="请点击" />
+	<input id="txt001" type="text" value="默认值为零" />
+	
+	<div id="div001" style="width: 200px; height: 150px; background-color: green;">
+	</div>
+	<input id="btn001" type="button" onclick="shd()" value="隐藏div">
+	<input id="btn002" type="button" onclick="sht()" value="Toggle">
 	
 </body>
 </html>
