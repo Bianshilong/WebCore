@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel=stylesheet href="../../css/CssDemo.css" type="text/css"/>
+<link rel=stylesheet href="../../css/CssDemo.css" type="text/css" />
 <script type="text/javascript" src="../../js/jqurey/jquery-3.2.1.js"></script>
 <script type="text/javascript">
 	
@@ -97,55 +97,56 @@
 					})	
 			}
  */
- 		$('#div001').toggle(2000,function(){});
+ 		$('#div001').slideToggle(2000,function(){});
 	}
 </script>
 </head>
 <body>
 	<form id="my_form" action="">
-		<input id="ipt" type="text" class="cls_ipt" />
-		<input  type="button"  />
-		<input id="i" type="text" class="cls_ipt" />
-		<input id="it" type="password" class="cls_ipt" />
-		<input id="pt" type="text" class="cls_ipt" />
+		<input id="ipt" type="text" class="cls_ipt" /> <input type="button" />
+		<input id="i" type="text" class="cls_ipt" /> <input id="it"
+			type="password" class="cls_ipt" /> <input id="pt" type="text"
+			class="cls_ipt" />
 	</form>
 	<input type="button" onclick="get_val()" value="测试属性选择器" />
 	<input type="button" onclick="ipcheck()" value="input选择器" />
-	<hr/>
+	<hr />
 	<form id="my_form1">
-		<input type="text"/>
-		<input type="radio"/>
-		<input type="radio" checked="checked"/>
-		<input type="checkbox"/>
-		<input type="checkbox" checked="checked"/>
+		<input type="text" /> <input type="radio" /> <input type="radio"
+			checked="checked" /> <input type="checkbox" /> <input
+			type="checkbox" checked="checked" />
 	</form>
-	<input type="button" onclick="ck()" value="unchecked选择器"/>
-	<hr/>
+	<input type="button" onclick="ck()" value="unchecked选择器" />
+	<hr />
 	<select id="sel" multiple="multiple">
-    	<option value="0">苹果</option>
-    	<option value="1" selected="selected" style="color: red">桔子</option>
-    	<option value="2">荔枝</option>
-    	<option value="3" selected="selected">葡萄</option>
-    	<option value="4">香蕉</option>
+		<option value="0">苹果</option>
+		<option value="1" selected="selected" style="color: red">桔子</option>
+		<option value="2">荔枝</option>
+		<option value="3" selected="selected">葡萄</option>
+		<option value="4">香蕉</option>
 	</select>
-	<input type="button" onclick="selt()" value="Selected选择器"/>
-	<hr/>
+	<input type="button" onclick="selt()" value="Selected选择器" />
+	<hr />
 	<form id="my_form2" action="foo.php"></form>
-	<input type="button" onclick="cots()" value="con选择器"/>	
-	<a href="http://www.baidu.com">这是一个超链接</a>
-	<input type="button" onclick="rem()" value="removeattr()"/>
-	<p id="pp00"><b>Hello</b></p>
-	<input type="button" onclick="test1()" value="ceshi html,text"/>
-	<input type="button" onclick="appd()" value="Append()"/>
-	<input type="button" onclick="preappd()" value="Prepend()"/>
-	<input type="button" onclick="afappd()" value="after()"/>
-	<input type="button" onclick="awrap()" value="Wrap()"/>
-	
+	<input type="button" onclick="cots()" value="con选择器" />
+	<a href="http://www.baidu.com" style="color: red; font-size: 20px;">这是一个超链接</a>
+	<input type="button" onclick="rem()" value="removeattr()" />
+	<p id="pp00">
+		<b>Hello</b>
+	</p>
+	<input type="button" onclick="test1()" value="ceshi html,text" />
+	<input type="button" onclick="appd()" value="Append()" />
+	<input type="button" onclick="preappd()" value="Prepend()" />
+	<input type="button" onclick="afappd()" value="after()" />
+	<input type="button" onclick="awrap()" value="Wrap()" />
+
 	<hr />
 	<p class="cls_1 cls_2 ">其实我是一个span</p>
-	<input type="button" onclick="addc()" value="addClass"/>
-	<input type="button" onclick="remc()" value="removeClass"/>
-	<p id="pp01"><input type="text" /><input type="button" value="GO" /></p>
+	<input type="button" onclick="addc()" value="addClass" />
+	<input type="button" onclick="remc()" value="removeClass" />
+	<p id="pp01">
+		<input type="text" /><input type="button" value="GO" />
+	</p>
 	<script type="text/javascript">
 	$(function(){
 		$('#btn').bind('click',function(){
@@ -177,11 +178,46 @@
 	</script>
 	<input id="btn" type="button" value="请点击" />
 	<input id="txt001" type="text" value="默认值为零" />
-	
-	<div id="div001" style="width: 200px; height: 150px; background-color: green;">
-	</div>
+
+	<div id="div001"
+		style="width: 200px; height: 150px; background-color: green;"></div>
 	<input id="btn001" type="button" onclick="shd()" value="隐藏div">
 	<input id="btn002" type="button" onclick="sht()" value="Toggle">
-	
+	<hr />
+	<div id="div002"
+		style="width: 24px; height: 32px; border: 1px solid red;"></div>
+	<button id="btn003" type="button">变大</button>
+
+	<script type="text/javascript">
+		$('#btn003').bind('click', function(){
+    		$('#div002').animate({
+        	width: '240px',
+        	height: '320px'
+    		}, 3000,function(){
+        		$('#div002').animate({
+                	width: '24px',
+                	height: '32px'
+            		}, 3000)});
+		});
+
+		
+	</script>
+	<hr />
+	<div id="div003"
+		style="position: relative; width: 24px; height: 32px; border: 1px solid red;"></div>
+	<button id="btn004" type="button">向右</button>
+
+	<script type="text/javascript">
+		$('#btn004').bind('click', function(){
+    		$('#div003').animate({
+        	left: '+=100px'
+   			 }, 3000,function(){
+				$('#div003').animate({left:'-=100px'},3000)
+				
+   	   			 });
+		});
+</script>
+
+
 </body>
 </html>
