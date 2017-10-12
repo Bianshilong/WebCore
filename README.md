@@ -1,2 +1,0 @@
-# WebCore
-base for web
